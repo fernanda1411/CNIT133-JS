@@ -30,3 +30,11 @@ html {
 	linear-gradient(#eee .1em, transparent .1em);
 	background-size: 100% 1.2em;
 }
+
+
+div#text { 
+	width: 0px; 
+	height: 2em; 
+	white-space: nowrap; 
+	overflow: hidden;  
+}
