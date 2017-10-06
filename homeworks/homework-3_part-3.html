@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CNIT 133 Homework 3 - Part 1 - Student Grades</title>
+    <title>CNIT 133 Homework 3 - Part 3 - Customer credit limit</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -69,14 +69,14 @@
     </nav>
   	<div class="container">
         <div class="page-header">
-          <div id="text"><span>CNIT 133 Homework 3 - Part 1 - Student's final average</span></div>
+          <div id="text"><span>CNIT 133 Homework 3 - Part 3 - Customer credit limit</span></div>
         </div>
     	  <div class="row marketing d-flex">
           <aside class="sub-menu">
             <ul>
-                <li><a>Part 1 - Student's final average</a></li>
+                <li><a href="homework-3_part-1.html">Part 1 - Student's final average</a></li>
                 <li><a href="homework-3_part-2.html">Part 2 - Salesperson report</a></li>
-                <li><a href="homework-3_part-3.html">Part 3 - Customer credit limit</a></li>
+                <li><a>Part 3 - Customer credit limit</a></li>
                 <li><a href="homework-3_part-4.html">Part 4 - Palindromes</a></li>
                 <li><a href="homework-3_part-4.html">Part 5 - Celsius / Fahrenheit conversion</a></li>
                 <li><a href="homework-3_part-4.html">Part 6 - Learn multiplication</a></li>
@@ -84,66 +84,37 @@
             </ul>
           </aside>
           <article id="main-content" class="col">
-            <h1>Student Grades</h1>
-            <div class="jumbotron">
-              <!-- <button id="show-instructions">Click to Show/Hide Instructions</button> -->
-              <p><a id="show-instructions" class="btn btn-lg btn-secondary" role="button">Click to Show/Hide Instructions</a></p>
-              <div id="instructions" style="display:none;">
-                  <p>'The following webpage contains the heading, Student Grades, and uses a script that inputs a student's homework average, mid-term exam score, final exam score, and ACR (all as integers)'. Calculate the student's final average according to the formula: final average = (.5 hwAvg) + (.2 midExam) + (.2 finalExam) + (.1 ACR).</p>
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th>Points</th>
-                        <th>Grades</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>90-100</td>
-                        <td>A</td>
-                      </tr>
-                      <tr>
-                        <td>80-89</td>
-                        <td>B</td>
-                      </tr>
-                      <tr>
-                        <td>70-79</td>
-                        <td>C</td>
-                      </tr>
-                      <tr>
-                          <td>60-69</td>
-                          <td>D</td>
-                      </tr>
-                      <tr>
-                          <td>0-59</td>
-                          <td>F</td>
-                      </tr>
-                    </tbody>
-                  </table>
-              </div>
-            </div>
-            </div>
-            <div id="result" class="alert alert-info" style="display:none" role="alert"></div>
-            <form name="stundentsGrade">
-              <div class="form-group">
-                <label for="homeworkAverage">Student's homework average:</label>
-                <input id="homeworkAverage" type="number" name="homeworkAverage">
-              </div>
-              <div class="form-group">
-                <label for="midTermScore">Mid-term exam score:</label>
-                <input id="midTermScore" type="number" name="midTermScore">
-              </div>
-              <div class="form-group">
-                <label for="finalExameScore">Final exam score:</label>
-                <input id="finalExameScore" type="number" name="finalExameScore">
-              </div>
-              <div class="form-group">
-                <label for="acr">ACR:</label>
-                <input id="acr" type="number" name="acr">
-              </div>
-              <input type="button" onclick="processStudentGrades()" class="btn btn-lg btn-success" value="Calculate Student Final Average">
+            <form id="myform" name="myform">
+                <label>
+                    <span>Account number</span>
+                    <input id="account" type="text" name="item1">
+                </label>
+                <label>
+                    <span>Balance at the beginning of the month</span>
+                    <input id="balance" type="text" name="item2">
+                </label>
+                <label>
+                    <span>Total of all items charged by this customer this month</span>
+                    <input id="itemsTotal" type="text" name="item3">
+                </label>
+                <label>
+                    <span>Total of all credits applied to this customer's account this month</span>
+                    <input id="creditsTotal" type="text" name="item4">
+                </label>
+                <label>
+                    <span>Allowed credit limit</span>
+                    <input id="creditAllowed" type="text" name="item4">
+                </label>
+                <div class="controls">
+                    <input id="resetForm" onclick="resetForm()" type="reset"  value="Reset">
+                    <input id="sendForm" onclick ="submitForm()" type="button" value="Submit">
+                </div>
             </form>
+
+            <div>
+                <textarea id="output" name=""></textarea>
+                <button id="toogleTextArea">Click to change Textarea Display</button>
+            </div>
           </article>
     	  </div>
   	  </div>
@@ -163,7 +134,7 @@
                   src="http://jigsaw.w3.org/css-validator/images/vcss"
                   alt="Valid CSS!">
           </a>
-          <a target="_blank" href="https://github.com/fernanda1411/CNIT133-JS/blob/master/homeworks/homework-3_part-1.html">
+          <a target="_blank" href="https://github.com/fernanda1411/CNIT133-JS/blob/master/homeworks/homework-3_part-3.html">
               <img style="border:0;width:88px;height:31px"
                   src="https://www.aha.io/assets/github.7433692cabbfa132f34adb034e7909fa.png"
                   alt="GitHub">
@@ -177,6 +148,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <!-- Optional JavaScript -->
     <script type="text/javascript" src="../js/writting-animation.js"></script>
-    <script language="javascript" src="../js/homework-3_part-1.js"></script>
+    <script language="javascript" src="../js/homework-3_part-3.js"></script>
   </body>
 </html>
