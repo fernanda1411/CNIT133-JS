@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CNIT 133 Homework 4 - Looping Statements</title>
+    <title>CNIT 133 Homework 4 - Part 4 - Calculate retail</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
-
-
     <!-- Google fonts - Indie Flower -->
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -71,23 +65,74 @@
     </nav>
   	<div class="container">
       <div class="page-header">
-        <div id="text"><span>CNIT 133 Homework 4 - Looping Statements</span></div>
+        <div id="text"><span>CNIT 133 Homework 4 - Part 4 - Calculate retail</span></div>
       </div>
   	  <div class="row marketing">
         <div class="row marketing d-flex">
           <aside class="sub-menu">
             <ul>
                 <li><a href="homework-4_part-1.html">Part 1 - For and While statements</a></li>
-                <li><a>Part 2 - Employees gross pay</a></li>
+                <li><a href="homework-4_part-2.html">Part 2 - Employees gross pay</a></li>
                 <li><a href="homework-4_part-3.html">Part 3 - Compound interest calculation</a></li>
-                <li><a href="homework-4_part-4.html">Part 4 - Calculate retail</a></li>
+                <li><a>Part 4 - Calculate retail</a></li>
                 <li><a href="homework-4_part-5.html">Part 5 - Lists</a></li>
                 <li><a href="homework-4_part-6.html">Part 6 - The Twelve Days of Christmas</a></li>
                 <li><a href="homework-4_extracredit.html">Extra Credit - Square asterisks</a></li>
             </ul>
           </aside>
           <article id="main-content" class="col">
-
+              <form id="retailPrices">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Product #</th>
+                      <th>Qty</th>
+                      <th>Price</th>
+                      <th>Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input id="prod_1" value="1" disabled="disabled"></td>
+                      <td><input id="qty_1" type="text"></td>
+                      <td><input id="price_1" disabled type="text"></td>
+                      <td><input id="amount_1" disabled type="text"></td>
+                    </tr>
+                    <tr>
+                      <td><input id="prod_2" value="2" disabled="disabled"></td>
+                      <td><input id="qty_2" type="text"></td>
+                      <td><input id="price_2" disabled type="text"></td>
+                      <td><input id="amount_2" disabled type="text"></td>
+                    </tr>
+                    <tr>
+                      <td><input id="prod_3" value="3" disabled="disabled"></td>
+                      <td><input id="qty_3" type="text"></td>
+                      <td><input id="price_3" disabled type="text"></td>
+                      <td><input id="amount_3" disabled type="text"></td>
+                    </tr>
+                    <tr>
+                      <td><input id="prod_4" value="4" disabled="disabled"></td>
+                      <td><input id="qty_4" type="text"></td>
+                      <td><input id="price_4" disabled type="text"></td>
+                      <td><input id="amount_4" disabled type="text"></td>
+                    </tr>
+                    <tr>
+                      <td><input id="prod_5" value="5" disabled="disabled"></td>
+                      <td><input id="qty_5" type="text"></td>
+                      <td><input id="price_5" disabled type="text"></td>
+                      <td><input id="amount_5" disabled type="text"></td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="3">Total Amount Sold</td>
+                      <td><input id="total_sold" disabled type="text"></td>
+                    </tr>
+                  </tfoot>
+                </table>
+                <input type="button" value="Calculate" onclick="process()">
+                <input type="reset" value="Reset" size="10">
+              </form>
           </article>
   	  </div>
   	</div>
@@ -121,39 +166,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <!-- Optional JavaScript -->
     <script type="text/javascript" src="../js/writting-animation.js"></script>
-    <!-- <script language="javascript" src="../js/homework-4_part-2.js"></script> -->
-    <script>
-
-
-
-
-
-
-      // var p1 = document.createElement("P");
-      // var p2 = document.createElement("P");
-      // var p3 = document.createElement("P");
-      // var p4 = document.createElement("P");
-      //
-      // var SumResultWithFoorLoop = document.createTextNode(productAndSumOfRangeWithForLoop(5,20,3,'sum', 'for'));
-      // var ProductResultWithFoorLoop = document.createTextNode(productAndSumOfRangeWithForLoop(5,20,3,'pro', 'for'));
-      // var SumResultWithWhileLoop = document.createTextNode(productAndSumOfRangeWithForLoop(3,31,4,'sum', 'while'));
-      // var ProductResultWithWhileLoop = document.createTextNode(productAndSumOfRangeWithForLoop(3,31,4,'pro', 'while'));
-      //
-      // p1.appendChild(SumResultWithFoorLoop);
-      // p2.appendChild(ProductResultWithFoorLoop);
-      // p3.appendChild(SumResultWithWhileLoop);
-      // p4.appendChild(ProductResultWithWhileLoop);
-      //
-      // document.getElementById("for-loop-result").appendChild(p1);
-      // document.getElementById("for-loop-result").appendChild(p2);
-      // document.getElementById("while-loop-result").appendChild(p3);
-      // document.getElementById("while-loop-result").appendChild(p4);
-      //
-      // $( function() {
-      //   $( "#for-loop-result" ).draggable();
-      //   $( "#while-loop-result" ).draggable();
-      // } );
-    </script>
-
+    <!-- Homework Scripts -->
+    <script language="javascript" src="../js/homework-4_part-4.js"></script>
   </body>
 </html>

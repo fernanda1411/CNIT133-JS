@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CNIT 133 Homework 4 - Looping Statements</title>
+    <title>CNIT 133 Homework 4 - Part 1 - Looping Statements</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -71,14 +71,14 @@
     </nav>
   	<div class="container">
       <div class="page-header">
-        <div id="text"><span>CNIT 133 Homework 4 - Looping Statements</span></div>
+        <div id="text"><span>CNIT 133 Homework 4 - Part 1 - Looping Statements</span></div>
       </div>
   	  <div class="row marketing">
         <div class="row marketing d-flex">
           <aside class="sub-menu">
             <ul>
-                <li><a href="homework-4_part-1.html">Part 1 - For and While statements</a></li>
-                <li><a>Part 2 - Employees gross pay</a></li>
+                <li><a>Part 1 - For and While statements</a></li>
+                <li><a href="homework-4_part-2.html">Part 2 - Employees gross pay</a></li>
                 <li><a href="homework-4_part-3.html">Part 3 - Compound interest calculation</a></li>
                 <li><a href="homework-4_part-4.html">Part 4 - Calculate retail</a></li>
                 <li><a href="homework-4_part-5.html">Part 5 - Lists</a></li>
@@ -87,8 +87,14 @@
             </ul>
           </aside>
           <article id="main-content" class="col">
-
+            <div id="for-loop-result" class="ui-widget-content">
+              <h4>Part 1a: Result with for loop - drag me around</h4>
+            </div>
+            <div id="while-loop-result" class="ui-widget-content">
+              <h4>Part 1b: Result with while loop - drag me around</h4>
+            </div>
           </article>
+
   	  </div>
   	</div>
     <footer class="bg-inverse">
@@ -121,38 +127,32 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <!-- Optional JavaScript -->
     <script type="text/javascript" src="../js/writting-animation.js"></script>
-    <!-- <script language="javascript" src="../js/homework-4_part-2.js"></script> -->
+    <script language="javascript" src="../js/homework-4_part-1.js"></script>
     <script>
+      var p1 = document.createElement("P");
+      var p2 = document.createElement("P");
+      var p3 = document.createElement("P");
+      var p4 = document.createElement("P");
 
+      var SumResultWithFoorLoop = document.createTextNode(productAndSumOfRangeWithForLoop(5,20,3,'sum', 'for'));
+      var ProductResultWithFoorLoop = document.createTextNode(productAndSumOfRangeWithForLoop(5,20,3,'pro', 'for'));
+      var SumResultWithWhileLoop = document.createTextNode(productAndSumOfRangeWithForLoop(3,31,4,'sum', 'while'));
+      var ProductResultWithWhileLoop = document.createTextNode(productAndSumOfRangeWithForLoop(3,31,4,'pro', 'while'));
 
+      p1.appendChild(SumResultWithFoorLoop);
+      p2.appendChild(ProductResultWithFoorLoop);
+      p3.appendChild(SumResultWithWhileLoop);
+      p4.appendChild(ProductResultWithWhileLoop);
 
+      document.getElementById("for-loop-result").appendChild(p1);
+      document.getElementById("for-loop-result").appendChild(p2);
+      document.getElementById("while-loop-result").appendChild(p3);
+      document.getElementById("while-loop-result").appendChild(p4);
 
-
-
-      // var p1 = document.createElement("P");
-      // var p2 = document.createElement("P");
-      // var p3 = document.createElement("P");
-      // var p4 = document.createElement("P");
-      //
-      // var SumResultWithFoorLoop = document.createTextNode(productAndSumOfRangeWithForLoop(5,20,3,'sum', 'for'));
-      // var ProductResultWithFoorLoop = document.createTextNode(productAndSumOfRangeWithForLoop(5,20,3,'pro', 'for'));
-      // var SumResultWithWhileLoop = document.createTextNode(productAndSumOfRangeWithForLoop(3,31,4,'sum', 'while'));
-      // var ProductResultWithWhileLoop = document.createTextNode(productAndSumOfRangeWithForLoop(3,31,4,'pro', 'while'));
-      //
-      // p1.appendChild(SumResultWithFoorLoop);
-      // p2.appendChild(ProductResultWithFoorLoop);
-      // p3.appendChild(SumResultWithWhileLoop);
-      // p4.appendChild(ProductResultWithWhileLoop);
-      //
-      // document.getElementById("for-loop-result").appendChild(p1);
-      // document.getElementById("for-loop-result").appendChild(p2);
-      // document.getElementById("while-loop-result").appendChild(p3);
-      // document.getElementById("while-loop-result").appendChild(p4);
-      //
-      // $( function() {
-      //   $( "#for-loop-result" ).draggable();
-      //   $( "#while-loop-result" ).draggable();
-      // } );
+      $( function() {
+        $( "#for-loop-result" ).draggable();
+        $( "#while-loop-result" ).draggable();
+      } );
     </script>
 
   </body>
